@@ -5,6 +5,7 @@ on:
     branches: [ "main" ]
   schedule:
     - cron: "0 * * * *" # запуск каждый час
+  workflow_dispatch:
 
 jobs:
   run-collector:
