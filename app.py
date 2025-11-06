@@ -14,7 +14,8 @@ import json
 import database.reqs as rq
 
 from dotenv import load_dotenv
-load_dotenv()
+if os.path.exists(".env"):
+    load_dotenv()
 
 ############################################# Подключаемся к аккаунту ########################################
 
@@ -219,5 +220,4 @@ def run():
 if __name__ == "__main__":
     while True:
         run()
-        time.sleep(20)
 # source .venv/bin/activate
