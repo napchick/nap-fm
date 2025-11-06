@@ -13,18 +13,16 @@ import json
 
 import database.reqs as rq
 
-# from dotenv import load_dotenv
-# load_dotenv() коммент
+from dotenv import load_dotenv
+load_dotenv()
 
 ############################################# Подключаемся к аккаунту ########################################
 
-# Записываем в переменные:
-# cid = '4454b239ccc047d5883bbe321cb9b178' # client ID
-# secret = 'de51005f29e245efa536df483bc21878' # client secret
-# rur = 'http://127.0.0.1:8888/callback/'  # redirected URI
+
 cid = os.getenv("SPOTIFY_CLIENT_ID")
 secret = os.getenv("SPOTIFY_CLIENT_SECRET")
 rur = os.getenv("SPOTIFY_REDIRECT_URI")
+refresh_token = os.getenv("SPOTIFY_REFRESH_TOKEN")
 scope = "user-read-private user-read-email user-library-read user-library-modify user-read-playback-state user-modify-playback-state user-read-currently-playing user-read-recently-played user-top-read playlist-read-private playlist-modify-private playlist-modify-public"
 user = '31t6epawnwecq5mlows2f57weyyy' # имя пользователя
 
@@ -39,14 +37,15 @@ sp_oauth = SpotifyOAuth(
     username=user
 )
 
-auth_url = sp_oauth.get_authorize_url()
-print("Пожалуйста, перейдите по этой ссылке, чтобы авторизоваться:")
-print(unquote(auth_url))
+# auth_url = sp_oauth.get_authorize_url()
+# print("Пожалуйста, перейдите по этой ссылке, чтобы авторизоваться:")
+# print(unquote(auth_url))
 
-code = str(input())
+# code = str(input())
 
-# получем токен
-token_info = sp_oauth.get_access_token(code)
+# # получем токен
+# token_info = sp_oauth.get_access_token(code)
+token_info = sp_oauth.refresh_access_token(refresh_token)
 sp = spotipy.Spotify(auth=token_info["access_token"])
 
 
