@@ -1,19 +1,24 @@
 from sqlalchemy import BigInteger, String, ForeignKey, DateTime, Date
 from sqlalchemy import create_engine
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, sessionmaker
-import streamlit as st
 from datetime import datetime, date
-
+import os
 
 
 # url = 'postgresql+psycopg2://neondb_owner:npg_8e7UwjHYWzRa@ep-summer-queen-adz2anyx-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=verify-ca&sslrootcert=isrgrootx1.pem'
 
-# engine = create_engine(
-#     'postgresql+psycopg2://neondb_owner:npg_8e7UwjHYWzRa@ep-summer-queen-adz2anyx-pooler.c-2.us-east-1.aws.neon.tech/neondb'
-#     '?sslmode=verify-ca&sslrootcert=isrgrootx1.pem'
-# )
 
-url = st.secrets["connections"]["postgres"]["url"]
+try:
+    import streamlit as st
+    if "connections" in st.secrets and "postgres" in st.secrets["connections"]:
+        url = st.secrets["connections"]["postgres"]["url"]
+    else:
+        raise Exception("No secrets in Streamlit, fallback to env")
+except Exception:
+    # Если код работает вне Streamlit (например, в GitHub Actions)
+    url = os.getenv("DATABASE_URL")
+
+
 engine = create_engine(url)
 
 async_session = sessionmaker(engine)

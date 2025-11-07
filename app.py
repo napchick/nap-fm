@@ -13,9 +13,9 @@ import json
 
 import database.reqs as rq
 
-from dotenv import load_dotenv
-if os.path.exists(".env"):
-    load_dotenv()
+# from dotenv import load_dotenv
+# if os.path.exists(".env"):
+#     load_dotenv()
 
 ############################################# Подключаемся к аккаунту ########################################
 
