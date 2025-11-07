@@ -19,7 +19,7 @@ except Exception:
     url = os.getenv("DATABASE_URL")
 
 
-engine = create_engine(url)
+engine = create_engine(url, pool_pre_ping=True)
 
 async_session = sessionmaker(engine)
 
