@@ -4,5 +4,6 @@ __pycache__/
 .cache-31t6epawnwecq5mlows2f57weyyy
 napfm.db
 .env
+.streamlit/secrets.toml
 
 

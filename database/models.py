@@ -1,21 +1,20 @@
 from sqlalchemy import BigInteger, String, ForeignKey, DateTime, Date
 from sqlalchemy import create_engine
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, sessionmaker
+import streamlit as st
 from datetime import datetime, date
 
-#engine = create_engine(url='sqlite:///napfm.db')
-#engine = create_engine('postgresql+psycopg2://postgres:pgpass@localhost:5432/postgres')
 
+
+# url = 'postgresql+psycopg2://neondb_owner:npg_8e7UwjHYWzRa@ep-summer-queen-adz2anyx-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=verify-ca&sslrootcert=isrgrootx1.pem'
 
 # engine = create_engine(
-#     'postgresql+psycopg2://neondb_owner:npg_8e7UwjHYWzRa@ep-summer-queen-adz2anyx-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+#     'postgresql+psycopg2://neondb_owner:npg_8e7UwjHYWzRa@ep-summer-queen-adz2anyx-pooler.c-2.us-east-1.aws.neon.tech/neondb'
+#     '?sslmode=verify-ca&sslrootcert=isrgrootx1.pem'
 # )
 
-engine = create_engine(
-    'postgresql+psycopg2://neondb_owner:npg_8e7UwjHYWzRa@ep-summer-queen-adz2anyx-pooler.c-2.us-east-1.aws.neon.tech/neondb'
-    '?sslmode=verify-ca&sslrootcert=isrgrootx1.pem'
-)
-
+url = st.secrets["connections"]["postgres"]["url"]
+engine = create_engine(url)
 
 async_session = sessionmaker(engine)
 
