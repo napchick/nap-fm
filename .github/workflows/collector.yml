@@ -1,10 +1,13 @@
 name: Run Spotify Collector
 
+permissions:
+  contents: write
+
 on:
   push:
     branches: [ "main" ]
   schedule:
-    - cron: "*/25 * * * *" # запуск каждый час
+    - cron: "*/25 * * * *" 
   workflow_dispatch:
 
 jobs:
@@ -14,6 +17,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false  
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -33,4 +38,15 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
           python app.py
-    
+
+      - name: Commit updated JSON file
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add last_timestamp.json 
+          git commit -m "Update last added track timestamp" || echo "No changes to commit"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main
+
+            
