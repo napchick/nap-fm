@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "main" ]
   schedule:
-    - cron: "0 * * * *" # запуск каждый час
+    - cron: "*/25 * * * *" # запуск каждый час
   workflow_dispatch:
 
 jobs:
@@ -33,3 +33,4 @@ jobs:
           DB_URL: ${{ secrets.DATABASE_URL }}
         run: |
           python app.py
+    
