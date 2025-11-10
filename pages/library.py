@@ -251,7 +251,7 @@ with col12:
                     unsafe_allow_html=True)
             with col4:
                 time_of_song = datetime.strptime(row['time'], '%Y-%m-%d %H:%M:%S.%f')
-                time_of_song += timedelta(hours=3)
+                time_of_song -= timedelta(hours=3)
                 difference = datetime.now() - time_of_song
                 minutes = difference.total_seconds() / 60
                 if minutes < 60:
