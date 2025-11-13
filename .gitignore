@@ -6,5 +6,5 @@ napfm.db
 .env
 .streamlit/secrets.toml
 main.py
-
+changes.patch
 
