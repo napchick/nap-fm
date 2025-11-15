@@ -1,10 +1,6 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth, SpotifyClientCredentials
-import spotipy.util as util
-import pylab
-import pandas as pd
-from urllib.parse import unquote
-import time
+#import spotipy.util as util
 import datetime
 from datetime import timedelta
 import requests
@@ -37,12 +33,6 @@ sp_oauth = SpotifyOAuth(
     scope=scope,
     username=user
 )
-
-# auth_url = sp_oauth.get_authorize_url()
-# print("Пожалуйста, перейдите по этой ссылке, чтобы авторизоваться:")
-# print(unquote(auth_url))
-
-# code = str(input())
 
 # # получем токен
 # token_info = sp_oauth.get_access_token(code)
