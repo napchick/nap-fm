@@ -121,7 +121,10 @@ def run():
             # Есть ли уже такая песня в базе
             if rq.is_song(title, artist) == 0:
                 duration = item['track']['duration_ms']
-                logo = item['track']['album']['images'][0]['url']
+                try:
+                    logo = item['track']['album']['images'][0]['url']
+                except:
+                    logo = ''
                 popularity = item['track']['popularity']
                 release_date = item['track']['album']['release_date']
 
