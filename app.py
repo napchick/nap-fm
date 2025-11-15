@@ -180,14 +180,22 @@ def run():
 
             # Добавление песни в таблицу с историей
             play_time_str = item['played_at']
+
+            # Приводим время текущей песни к необходимому формату
             try:
                 play_time = datetime.datetime.strptime(play_time_str, "%Y-%m-%dT%H:%M:%S.%fZ")
-                prev_play_time = datetime.datetime.strptime(previous_time, "%Y-%m-%dT%H:%M:%S.%fZ")
             except:
                 play_time = datetime.datetime.strptime(play_time_str, "%Y-%m-%dT%H:%M:%SZ")
+
+            # Приводим время предыдущей песни к необходимому формату
+            try:
+                prev_play_time = datetime.datetime.strptime(previous_time, "%Y-%m-%dT%H:%M:%S.%fZ")
+            except:
                 prev_play_time = datetime.datetime.strptime(previous_time, "%Y-%m-%dT%H:%M:%SZ")
+
             play_time += timedelta(hours=3)
             prev_play_time += timedelta(hours=3)
+
 
             # Проверка, что песня была прослушана хотя бы 1 минуту, а не пролистана
             if play_time - prev_play_time >= timedelta(minutes=1):
