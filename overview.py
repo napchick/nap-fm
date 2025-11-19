@@ -13,6 +13,40 @@ def get_param(key, params, default=None):
         return values[0] if isinstance(values, list) else values
     return default
 
+# Создание кнопок с жанрами у артистов
+def render_genre_buttons(tags):
+    st.markdown(
+        """
+        <style>
+        .genre-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .genre-btn {
+            background-color: #111;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        .genre-btn:hover {
+            background-color: #222;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+    html = '<div class="genre-container">'
+    for tag in tags:
+        html += f"<button class='genre-btn'>{tag}</button>"
+    html += "</div>"
+
+    st.markdown(html, unsafe_allow_html=True)
+
 
 # ------------------------
 st.set_page_config(page_title="nap.fm", page_icon="🎧", layout="wide")
@@ -77,7 +111,6 @@ params = st.query_params
 
 # Определяем текущую страницу
 page = get_param("page", params,  "home")
-
 
 
 # Главная страница
@@ -295,13 +328,16 @@ elif page == "song":
             st.title(f"{data['name'][0]} -- {data['title'][0]}")
             st.markdown("<hr>", unsafe_allow_html=True)
             #st.markdown(f"**{data['title'][0]}**")
-            st.markdown(f"Duration: {data['duration'][0] // 1000 // 60}:{data['duration'][0] // 1000 % 60}")
+            minutes = int(data['duration'][0] / 1000 // 60)
+            seconds = int(data['duration'][0] / 1000 % 60)
+            st.markdown(f"Duration: {minutes}:{seconds:02d}")
             st.markdown(f"Release date: {data['release_date'][0]}")
             st.markdown(f"Scrobbles: {len(song_history)}")
 
             # Делаем график с историей прослушиваний
             song_history["time"] = pd.to_datetime(song_history["time"])
             df = song_history.groupby(song_history["time"].dt.date).size().reset_index(name="plays")
+
 
             # Создание графика
             fig = go.Figure()
@@ -313,7 +349,20 @@ elif page == "song":
                 line=dict(color="#1DB954", width=2.5),  # Spotify green
                 fill="tozeroy",  # закрашивает под графиком
                 fillcolor="rgba(29,185,84,0.15)",  # прозрачный зелёный
-                hovertemplate="%{x}<br><b>%{y}</b> plays<extra></extra>"
+                #hovertemplate="%{x}<br><b>%{y}</b> plays<extra></extra>"
+            ))
+
+            fig.add_trace(go.Scatter(
+                x=df.query("plays > 0")["time"],
+                y=df.query("plays > 0")["plays"],
+                mode="markers",
+                marker=dict(
+                    color="#1DB954",
+                    size=8,
+                    line=dict(width=2, color="#ffffff")
+                ),
+                hovertemplate="%{x|%d %b %Y}<br><b>%{y}</b> plays<extra></extra>",
+                #name="Дни с прослушиваниями"
             ))
 
             # Настройки внешнего вида
@@ -323,6 +372,7 @@ elif page == "song":
                 margin=dict(l=20, r=20, t=20, b=40),
                 plot_bgcolor="#000000",
                 paper_bgcolor="#000000",
+                showlegend=False,
                 xaxis=dict(
                     showgrid=False,
                     tickfont=dict(color="rgba(200,200,200,0.7)"),
@@ -365,12 +415,15 @@ elif page == "artist":
             st.markdown(f"Country: {info['country'][0]}")
             st.markdown(f"Followers: {info['followers'][0]}")
             st.markdown(f"Scrobbles: {len(artist_history)}")
-            st.markdown("Tags:")
-            # genre_cols = st.columns(len(genres))
-            # for i in range(len(genres)):
-            #     with genre_cols[i]:
-            #         st.button(str(genres['genre_name'][i]))
+            if len(genres) > 0:
+                st.markdown("Tags:")
+                render_genre_buttons(genres['genre_name'])
+                # for tag in genres['genre_name']:
+                #     st.markdown(f"<button class='genre-btn' target='_self'>{tag}</button>", unsafe_allow_html=True)
+
             # график показывающий как менялось кол-во прослушиваний за день
+            st.write("""\n \n""")
+            st.markdown("History of listening:")
 
             # Делаем график с историей прослушиваний
             artist_history["time"] = pd.to_datetime(artist_history["time"])
@@ -386,7 +439,20 @@ elif page == "artist":
                 line=dict(color="#1DB954", width=2.5),  # Spotify green
                 fill="tozeroy",  # закрашивает под графиком
                 fillcolor="rgba(29,185,84,0.15)",  # прозрачный зелёный
-                hovertemplate="%{x}<br><b>%{y}</b> plays<extra></extra>"
+                #hovertemplate="%{x}<br><b>%{y}</b> plays<extra></extra>"
+            ))
+
+            fig.add_trace(go.Scatter(
+                x=df.query("plays > 0")["time"],
+                y=df.query("plays > 0")["plays"],
+                mode="markers",
+                marker=dict(
+                    color="#1DB954",
+                    size=8,
+                    line=dict(width=2, color="#ffffff")
+                ),
+                hovertemplate="%{x|%d %b %Y}<br><b>%{y}</b> plays<extra></extra>",
+
             ))
 
             # Настройки внешнего вида
@@ -396,6 +462,7 @@ elif page == "artist":
                 margin=dict(l=20, r=20, t=20, b=40),
                 plot_bgcolor="#000000",
                 paper_bgcolor="#000000",
+                showlegend=False,
                 xaxis=dict(
                     showgrid=False,
                     tickfont=dict(color="rgba(200,200,200,0.7)")

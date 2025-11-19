@@ -426,16 +426,24 @@ def get_artist_history(id):
 
     return artist_history
 
+# макс количество жанров на артиста (вспомогательная функция)
+count_gens = """
+        select artist_id, count(genre_id)
+        from artists2genres
+        group by artist_id
+        order by count(genre_id) desc
+        limit 3
+        """
 
 
 
+# df = pd.read_sql(get_genres('', ''), engine)
+# #df = pd.read_sql(get_mising_genres('', ''), engine)
+# # # # df = pd.read_sql(get_artist_genres(2), engine)
+# # df = pd.read_sql(get_artist_genres(39), engine)
+# df = pd.read_sql(gens, engine)
 
-df = pd.read_sql(get_genres('', ''), engine)
-#df = pd.read_sql(get_mising_genres('', ''), engine)
-# # # df = pd.read_sql(get_artist_genres(2), engine)
-# df = pd.read_sql(get_artist_genres(39), engine)
-
-print(df)
+# print(df)
 
 
 # python page_reqs.py
