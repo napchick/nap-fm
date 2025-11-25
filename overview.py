@@ -6,115 +6,68 @@ from datetime import timedelta, datetime
 from database.models import engine
 import page_reqs as pr
 
-# Универсальный способ извлечения одного параметра
-def get_param(key, params, default=None):
-    values = params.get(key)
-    if values:
-        return values[0] if isinstance(values, list) else values
-    return default
-
-# Создание кнопок с жанрами у артистов
-def render_genre_buttons(tags):
-    st.markdown(
-        """
-        <style>
-        .genre-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .genre-btn {
-            background-color: #111;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 10px;
-            border: 1px solid #333;
-            cursor: pointer;
-            font-size: 15px;
-        }
-        .genre-btn:hover {
-            background-color: #222;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
-    html = '<div class="genre-container">'
-    for tag in tags:
-        html += f"<button class='genre-btn'>{tag}</button>"
-    html += "</div>"
-
-    st.markdown(html, unsafe_allow_html=True)
 
 
-# ------------------------
-st.set_page_config(page_title="nap.fm", page_icon="🎧", layout="wide")
+def render():
+    # ------------------------
+    st.set_page_config(page_title="nap.fm", page_icon="🎧", layout="wide")
 
-hist = pd.read_sql(pr.last10, engine)
+    hist = pd.read_sql(pr.last10, engine)
 
-# стиль для надписей
-st.markdown("""
-<style>
-a.link {
-    color: white;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-a.link:hover {
-    color: #1DB954; /* Spotify-зелёный при наведении */
-    text-decoration: underline;
-}
-</style>
-""", unsafe_allow_html=True)
-
-# стиль для segmented_control
-st.markdown("""
+    # стиль для надписей
+    st.markdown("""
     <style>
-    /* Контейнер segmented control */
-    [data-testid="stSegmentedControl"] {
-        background-color: #121212; /* фон Spotify */
-        border-radius: 10px;
-        padding: 4px;
+    a.link {
+        color: white;
+        text-decoration: none;
+        transition: color 0.2s;
     }
-
-    /* Кнопки */
-    [data-testid="stSegmentedControl"] > div {
-        color: #b3b3b3; /* серый текст */
-        font-weight: 500;
-        background-color: transparent;
-        transition: all 0.2s ease;
-    }
-
-    /* Наведение */
-    [data-testid="stSegmentedControl"] > div:hover {
-        color: #1db954; /* зелёный Spotify */
-    }
-
-    /* Активная кнопка */
-    [data-testid="stSegmentedControl"] [aria-checked="true"] {
-        background-color: #1db954 !important;
-        color: white !important;
-        border-radius: 8px;
-    }
-
-    /* Текст активной кнопки */
-    [data-testid="stSegmentedControl"] [aria-checked="true"] p {
-        color: white !important;
+    a.link:hover {
+        color: #1DB954; /* Spotify-зелёный при наведении */
+        text-decoration: underline;
     }
     </style>
-""", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
+
+    # стиль для segmented_control
+    st.markdown("""
+        <style>
+        /* Контейнер segmented control */
+        [data-testid="stSegmentedControl"] {
+            background-color: #121212; /* фон Spotify */
+            border-radius: 10px;
+            padding: 4px;
+        }
+
+        /* Кнопки */
+        [data-testid="stSegmentedControl"] > div {
+            color: #b3b3b3; /* серый текст */
+            font-weight: 500;
+            background-color: transparent;
+            transition: all 0.2s ease;
+        }
+
+        /* Наведение */
+        [data-testid="stSegmentedControl"] > div:hover {
+            color: #1db954; /* зелёный Spotify */
+        }
+
+        /* Активная кнопка */
+        [data-testid="stSegmentedControl"] [aria-checked="true"] {
+            background-color: #1db954 !important;
+            color: white !important;
+            border-radius: 8px;
+        }
+
+        /* Текст активной кнопки */
+        [data-testid="stSegmentedControl"] [aria-checked="true"] p {
+            color: white !important;
+        }
+        </style>
+    """, unsafe_allow_html=True)
 
 
-# Получаем query параметры
-params = st.query_params
 
-# Определяем текущую страницу
-page = get_param("page", params,  "home")
-
-
-# Главная страница
-if page == "home":
     st.title("Staticstic information")
 
     # -------------------------------------- Статистические значения -----------------------------------------
@@ -129,7 +82,7 @@ if page == "home":
         data = pd.read_sql(pr.unique_artists, engine)
         st.markdown(f"{data['artists_count'][0]}")
 
-    
+
     # -------------------------------------- Последние прослушанные треки -----------------------------------------
     st.title("🎵 Recent tracks")
 
@@ -304,182 +257,5 @@ if page == "home":
                 )
 
 
-# Страница песни
-elif page == "song":
-    #st.markdown("<hr>", unsafe_allow_html=True)
-    st.markdown("<a class='link' href='?page=home' target='_self' >← Back to the list</a>", 
-                        unsafe_allow_html=True)
-    st.markdown("<hr>", unsafe_allow_html=True)
 
-    song_id = get_param("song_id", params)
-    if song_id is None:
-        st.error("❌ Не передан song_id")
-    else:
-        # Преобразуем в int, если это число
-        song_id = int(song_id)
-        data = pd.read_sql(pr.get_song_information(song_id), engine)
-        song_history = pd.read_sql(pr.get_song_history(song_id), engine)
-
-        col1, col2 = st.columns([1, 2])
-        with col1:
-            st.image(data["logo"][0], width=300)
-        with col2:
-            #st.markdown(f"***{data['name'][0]}***")
-            st.title(f"{data['name'][0]} -- {data['title'][0]}")
-            st.markdown("<hr>", unsafe_allow_html=True)
-            #st.markdown(f"**{data['title'][0]}**")
-            minutes = int(data['duration'][0] / 1000 // 60)
-            seconds = int(data['duration'][0] / 1000 % 60)
-            st.markdown(f"Duration: {minutes}:{seconds:02d}")
-            st.markdown(f"Release date: {data['release_date'][0]}")
-            st.markdown(f"Scrobbles: {len(song_history)}")
-
-            # Делаем график с историей прослушиваний
-            song_history["time"] = pd.to_datetime(song_history["time"])
-            df = song_history.groupby(song_history["time"].dt.date).size().reset_index(name="plays")
-
-
-            # Создание графика
-            fig = go.Figure()
-
-            fig.add_trace(go.Scatter(
-                x=df["time"],
-                y=df["plays"],
-                mode="lines",
-                line=dict(color="#1DB954", width=2.5),  # Spotify green
-                fill="tozeroy",  # закрашивает под графиком
-                fillcolor="rgba(29,185,84,0.15)",  # прозрачный зелёный
-                #hovertemplate="%{x}<br><b>%{y}</b> plays<extra></extra>"
-            ))
-
-            fig.add_trace(go.Scatter(
-                x=df.query("plays > 0")["time"],
-                y=df.query("plays > 0")["plays"],
-                mode="markers",
-                marker=dict(
-                    color="#1DB954",
-                    size=8,
-                    line=dict(width=2, color="#ffffff")
-                ),
-                hovertemplate="%{x|%d %b %Y}<br><b>%{y}</b> plays<extra></extra>",
-                #name="Дни с прослушиваниями"
-            ))
-
-            # Настройки внешнего вида
-            fig.update_layout(
-                template="plotly_dark",
-                height=350,
-                margin=dict(l=20, r=20, t=20, b=40),
-                plot_bgcolor="#000000",
-                paper_bgcolor="#000000",
-                showlegend=False,
-                xaxis=dict(
-                    showgrid=False,
-                    tickfont=dict(color="rgba(200,200,200,0.7)"),
-                ),
-                yaxis=dict(
-                    showgrid=False,
-                    tickfont=dict(color="rgba(200,200,200,0.7)"),
-                    visible=False  # можно скрыть ось Y, как в оригинале
-                ),
-                hovermode="x unified"
-            )
-            st.plotly_chart(fig, use_container_width=True)
-            
-
-
-# Страница артиста
-elif page == "artist":
-    st.markdown("<a class='link' href='?page=home' target='_self' >← Back to the list</a>", 
-                        unsafe_allow_html=True)
-    st.markdown("<hr>", unsafe_allow_html=True)
-
-    artist_id = get_param("artist_id", params)
-    if artist_id is None:
-        st.error("❌ Не передан artist_id")
-    else:
-        # Преобразуем в int, если это число
-        artist_id = int(artist_id)
-        info = pd.read_sql(pr.get_artist_information(artist_id), engine)
-        genres = pd.read_sql(pr.get_artist_genres(artist_id), engine)
-        artist_history = pd.read_sql(pr.get_artist_history(artist_id), engine)
-
-        col1, col2 = st.columns([1, 2])
-        with col1:
-            st.image(info["photo"][0], width=400)
-        with col2:
-            #st.markdown(f"**{info['name'][0]}**")
-            st.title(info['name'][0])
-            st.markdown("<hr>", unsafe_allow_html=True)
-            st.markdown(f"Birthday: {info['birthday'][0]}")
-            st.markdown(f"Country: {info['country'][0]}")
-            st.markdown(f"Followers: {info['followers'][0]}")
-            st.markdown(f"Scrobbles: {len(artist_history)}")
-            if len(genres) > 0:
-                st.markdown("Tags:")
-                render_genre_buttons(genres['genre_name'])
-                # for tag in genres['genre_name']:
-                #     st.markdown(f"<button class='genre-btn' target='_self'>{tag}</button>", unsafe_allow_html=True)
-
-            # график показывающий как менялось кол-во прослушиваний за день
-            st.write("""\n \n""")
-            st.markdown("History of listening:")
-
-            # Делаем график с историей прослушиваний
-            artist_history["time"] = pd.to_datetime(artist_history["time"])
-            df = artist_history.groupby(artist_history["time"].dt.date).size().reset_index(name="plays")
-
-            # Создание графика
-            fig = go.Figure()
-
-            fig.add_trace(go.Scatter(
-                x=df["time"],
-                y=df["plays"],
-                mode="lines",
-                line=dict(color="#1DB954", width=2.5),  # Spotify green
-                fill="tozeroy",  # закрашивает под графиком
-                fillcolor="rgba(29,185,84,0.15)",  # прозрачный зелёный
-                #hovertemplate="%{x}<br><b>%{y}</b> plays<extra></extra>"
-            ))
-
-            fig.add_trace(go.Scatter(
-                x=df.query("plays > 0")["time"],
-                y=df.query("plays > 0")["plays"],
-                mode="markers",
-                marker=dict(
-                    color="#1DB954",
-                    size=8,
-                    line=dict(width=2, color="#ffffff")
-                ),
-                hovertemplate="%{x|%d %b %Y}<br><b>%{y}</b> plays<extra></extra>",
-
-            ))
-
-            # Настройки внешнего вида
-            fig.update_layout(
-                template="plotly_dark",
-                height=350,
-                margin=dict(l=20, r=20, t=20, b=40),
-                plot_bgcolor="#000000",
-                paper_bgcolor="#000000",
-                showlegend=False,
-                xaxis=dict(
-                    showgrid=False,
-                    tickfont=dict(color="rgba(200,200,200,0.7)")
-                ),
-                yaxis=dict(
-                    showgrid=False,
-                    tickfont=dict(color="rgba(200,200,200,0.7)"),
-                    visible=False  # можно скрыть ось Y, как в оригинале
-                ),
-                hovermode="x unified"
-            )
-            st.plotly_chart(fig, use_container_width=True)
-
-
-# Непредвиденная страница
-else:
-    st.error("⚠️ Страница не найдена!")
-
-
-# streamlit run overview.py
+    # streamlit run overview.py

@@ -1,6 +1,6 @@
 import streamlit as st
-from . import overview
-from pages import library, reports, test
+from . import library, overview, reports
+from pages import test
 
 st.set_page_config(page_title="My Music App", layout="wide")
 
