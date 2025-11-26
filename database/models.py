@@ -6,9 +6,9 @@ import os
 
 
 # url = 'postgresql+psycopg2://neondb_owner:npg_8e7UwjHYWzRa@ep-summer-queen-adz2anyx-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=verify-ca&sslrootcert=isrgrootx1.pem'
-from dotenv import load_dotenv
-if os.path.exists(".env"):
-    load_dotenv()
+# from dotenv import load_dotenv
+# if os.path.exists(".env"):
+#     load_dotenv()
 
 try:
     import streamlit as st
