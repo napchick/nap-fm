@@ -75,8 +75,6 @@ def render():
             if len(genres) > 0:
                 st.markdown("Tags:")
                 render_genre_buttons(genres['genre_name'])
-                # for tag in genres['genre_name']:
-                #     st.markdown(f"<button class='genre-btn' target='_self'>{tag}</button>", unsafe_allow_html=True)
 
             # график показывающий как менялось кол-во прослушиваний за день
             st.write("""\n \n""")
