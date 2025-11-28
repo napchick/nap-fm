@@ -58,3 +58,23 @@
 
 ---
 
+## Скриншоты
+
+- ### Overview:
+
+![Overview page](assets/overview1.png)
+--
+![Overview page1](assets/overview2.png)
+
+- ### Library:
+
+![Library page1](assets/library1.png)
+--
+![Library page2](assets/library2.png)
+
+- ### Reports
+
+![Reports page1](assets/reports1.png)
+--
+![Reports page2](assets/reports2.png)
+
