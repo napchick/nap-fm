@@ -5,10 +5,6 @@ from datetime import datetime, date
 import os
 
 
-# url = 'postgresql+psycopg2://neondb_owner:npg_8e7UwjHYWzRa@ep-summer-queen-adz2anyx-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=verify-ca&sslrootcert=isrgrootx1.pem'
-# from dotenv import load_dotenv
-# if os.path.exists(".env"):
-#     load_dotenv()
 
 try:
     import streamlit as st
@@ -18,7 +14,7 @@ try:
         raise Exception("No secrets in Streamlit, fallback to env")
 except Exception:
     # Если код работает вне Streamlit (например, в GitHub Actions)
-    url = os.getenv("NEW_DATABASE_URL") # DATABASE_URL
+    url = os.getenv("DATABASE_URL") # DATABASE_URL
 
 
 engine = create_engine(url, pool_pre_ping=True)
