@@ -7,4 +7,5 @@ numpy==2.0.2
 plotly==6.2.0
 requests==2.32.4
 streamlit-plotly-events==0.0.6
+pycountry==23.12.11
 
