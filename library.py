@@ -195,7 +195,8 @@ def render():
 
     if lib_type == 'Scrobbles':
         st.markdown(f"**SCROBBLES**")
-        data = pd.read_sql(pr.scrobbles, engine)
+        data = pd.read_sql(pr.get_scrobbles(''), engine)
+        #data = pd.read_sql(pr.scrobbles, engine)
         st.markdown(f"{data['count'][0]}")
     elif lib_type == 'Artists':
         st.markdown(f"**ARTISTS**")
@@ -217,7 +218,8 @@ def render():
             ITEMS_PER_PAGE = 20
 
             # Считаем количество страниц
-            scrobbles = pd.read_sql(pr.scrobbles, engine)
+            #scrobbles = pd.read_sql(pr.scrobbles, engine)
+            scrobbles = pd.read_sql(pr.get_scrobbles(''), engine)
             total_items = scrobbles['count'][0]
             total_pages = (total_items // ITEMS_PER_PAGE) + (1 if total_items % ITEMS_PER_PAGE > 0 else 0)
 

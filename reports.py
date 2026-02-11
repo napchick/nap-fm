@@ -238,8 +238,8 @@ def render():
     #------------------------------------- Распределение песен по странам -------------------------------------------------
     st.title("🗺️ Songs geography")
 
-    # пример данных
-    df = pd.read_sql(pr.songs_per_country, engine)
+    #df = pd.read_sql(pr.songs_per_country, engine)
+    df = pd.read_sql(pr.get_songs_per_country('', ''), engine)
 
     # переводим ISO-2 → ISO-3
     def iso2_to_iso3(code):

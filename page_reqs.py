@@ -45,47 +45,83 @@ songs_agr = """
     order by count(h.id) desc
     """
 
+
 # число уникальных песен
 unique_songs = """
 SELECT count(song_id) as songs_count
 FROM songs"""
 
+# Число уникальных песен с произвольным периодом
+def get_unique_songs(where):
+    unique_songs = f"""
+    SELECT count(distinct song_id) as songs_count
+    FROM history
+    {where}
+    """
+
+    return unique_songs
+
 
 # Число уникальных исполнителей
 unique_artists = """
 SELECT count(artist_id) as artists_count
-FROM artists"""
+FROM artists
+"""
+
+# Число уникальных исполнителей с произвольным периодом
+def get_unique_artists(where):
+    unique_artists = f"""
+    SELECT count(distinct a.artist_id) as artists_count
+    FROM songs s join history h on s.song_id = h.song_id 
+        join songs2artists sa on s.song_id = sa.song_id
+        join artists a on sa.artist_id = a.artist_id
+    {where}
+    """
+
+    return unique_artists
 
 
 # самые прослушиваемые песни
-top_songs = """ 
-select h.song_id, s.title, count(h.id) as count_plays, s.logo, a.name as artist_name
-FROM songs s join history h on s.song_id = h.song_id 
-    join songs2artists sa on s.song_id = sa.song_id
-    join artists a on sa.artist_id = a.artist_id
-group by h.song_id, s.logo, a.name, s.title
-order by count(h.id) desc
-limit 5
-"""
+def get_top_songs(where):
+    top_songs = f""" 
+    select h.song_id, s.title, count(h.id) as count_plays, s.logo, a.name as artist_name
+    FROM songs s join history h on s.song_id = h.song_id 
+        join songs2artists sa on s.song_id = sa.song_id
+        join artists a on sa.artist_id = a.artist_id
+    {where}
+    group by h.song_id, s.logo, a.name, s.title
+    order by count(h.id) desc
+    limit 5
+    """
+
+    return top_songs
 
 
 # самые прослушиваемые исполнители
-top_artists = """ 
-select a.artist_id, count(h.id) as count_plays, a.photo, a.name as artist_name
-FROM songs s join history h on s.song_id = h.song_id 
-    join songs2artists sa on s.song_id = sa.song_id
-    join artists a on sa.artist_id = a.artist_id
-group by a.artist_id
-order by count(h.id) desc
-limit 5
-"""
+def get_top_artists(where):
+    top_artists = f""" 
+    select a.artist_id, count(h.id) as count_plays, a.photo, a.name as artist_name
+    FROM songs s join history h on s.song_id = h.song_id 
+        join songs2artists sa on s.song_id = sa.song_id
+        join artists a on sa.artist_id = a.artist_id
+    {where}
+    group by a.artist_id
+    order by count(h.id) desc
+    limit 5
+    """
+
+    return top_artists
 
 
 # количество прослушиваний 
-scrobbles = """
-select count(id)
-from history
-"""
+def get_scrobbles(where):
+    scrobbles = f"""
+    select count(id)
+    from history
+    {where}
+    """
+
+    return scrobbles
 
 
 # топ песни за последнюю неделю
@@ -199,14 +235,19 @@ def get_songs_per_hours(period):
 
 
 # распределение песен по странам
-songs_per_country = """
-select a.country, count(h.id)
-FROM songs s join history h on s.song_id = h.song_id 
-    join songs2artists sa on s.song_id = sa.song_id
-    join artists a on sa.artist_id = a.artist_id
-group by a.country
-order by count(h.id) desc
-"""
+def get_songs_per_country(where, limit):
+    songs_per_country = f"""
+    select a.country, count(h.id)
+    FROM songs s join history h on s.song_id = h.song_id 
+        join songs2artists sa on s.song_id = sa.song_id
+        join artists a on sa.artist_id = a.artist_id
+    {where}
+    group by a.country
+    order by count(h.id) desc
+    {limit}
+    """
+
+    return songs_per_country
 
 ############# добавить еще топ песню/артиста для кажой страны
 
@@ -220,7 +261,7 @@ order by count(artist_id)
 
 
 # жанры
-def get_genres(first_date, second_date):
+def get_genres(where, limit):
     genres =f"""
     with subquery as (
     select h.time, h.song_id, g.genre_name, s.title, a.name,
@@ -260,12 +301,14 @@ def get_genres(first_date, second_date):
     sub2 as (
     select distinct time, song_id, new_genre
     from subquery
+    {where}
     )
 
     select new_genre, count(song_id)
     from sub2
     group by new_genre
     order by count desc
+    {limit}
     """
 
     return genres
@@ -425,6 +468,23 @@ def get_artist_history(id):
     """
 
     return artist_history
+
+# Количество новых артистов
+def get_new_artists(whe):
+    new_artists = f""" 
+
+    with artists_rank as (
+    select a.artist_id, h.time, row_number() over(partition by a.artist_id order by h.id) as rank
+    FROM songs s join history h on s.song_id = h.song_id 
+        join songs2artists sa on s.song_id = sa.song_id
+        join artists a on sa.artist_id = a.artist_id)
+
+    select count(*) as count_new_artists
+    from artists_rank
+    {whe}
+    """
+
+    return new_artists
 
 # макс количество жанров на артиста (вспомогательная функция)
 count_gens = """

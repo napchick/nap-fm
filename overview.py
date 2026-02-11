@@ -75,11 +75,12 @@ def render():
 
     with col1:
         st.markdown(f"**SCROBBLES**")
-        data = pd.read_sql(pr.scrobbles, engine)
+        data = pd.read_sql(pr.get_scrobbles(''), engine)
         st.markdown(f"{data['count'][0]}")
     with col2:
         st.markdown(f"**ARTISTS**")
-        data = pd.read_sql(pr.unique_artists, engine)
+        data = pd.read_sql(pr.get_unique_artists(''), engine)
+        #data = pd.read_sql(pr.unique_artists, engine)
         st.markdown(f"{data['artists_count'][0]}")
 
 
@@ -110,7 +111,10 @@ def render():
             else:
                 st.write(row["time"])
         st.divider()
-
+    col1, col2, col3, col4 = st.columns([1, 1.5, 1.5, 1.5])
+    with col4:
+        st.markdown("<a class='link' href='?page=library' target='_self' > More tracks </a>", 
+                    unsafe_allow_html=True)
 
     # --------------------------------------------- Самые прослушиваемые треки -------------------------------------------
 
@@ -143,7 +147,8 @@ def render():
     if top_tracks_period is not None:
         top_songs = pd.read_sql(pr.get_top_songs_period(top_tracks_period), engine)
     else:
-        top_songs = pd.read_sql(pr.top_songs, engine)
+        #top_songs = pd.read_sql(pr.top_songs, engine)
+        top_songs = pd.read_sql(pr.get_top_songs(''), engine)
 
 
     # ------------- Отображаем карточки в 5 колонках ----------------
@@ -216,7 +221,7 @@ def render():
     if top_artists_period is not None:
         top_artists = pd.read_sql(pr.get_top_artists_period(top_artists_period), engine)
     else:
-        top_artists = pd.read_sql(pr.top_artists, engine)
+        top_artists = pd.read_sql(pr.get_top_artists(''), engine)
 
     # -------Отображаем карточки в 5 колонках--------
     cols = st.columns(5)

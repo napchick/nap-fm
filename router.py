@@ -1,59 +1,88 @@
 import streamlit as st
 
-import overview, library, artists, songs, reports
+import overview, library, artists, songs, reports, weekly
 
-def render_genre_buttons(pages):
-    st.markdown(
-        """
+
+def render_top_menu(active_page):
+    st.markdown("""
         <style>
-        .page-container {
+        .menu-container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 35px;
+            padding: 20px 40px;
+            font-size: 22px;
+            font-weight: 600;
         }
-        .page-btn {
-            background-color: #111;
+
+        .menu-item {
             color: white;
-            padding: 8px 15px;
-            border-radius: 10px;
-            border: 1px solid #333;
-            cursor: pointer;
-            font-size: 15px;
+            text-decoration: none;
+            position: relative;
+            padding-bottom: 6px;
         }
-        .page-btn:hover {
-            background-color: #222;
+                
+        .menu-item:hover {
+            color: white;
+        }
+
+        .menu-item:hover::after {
+            color: white;
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 100%;
+            background-color: #1DB954;
+        }
+
+        .menu-item-active {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 6px;
+        }
+
+        .menu-item-active::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 100%;
+            background-color: #1DB954;
         }
         </style>
-        """,
-        unsafe_allow_html=True
-    )
+    """, unsafe_allow_html=True)
 
-    html = '<div class="page-container">'
-    for page in pages:
-        html += f"<button class='page-btn'>{page}</button>"
-    html += "</div>"
+    html = '<div class="menu-container">'
+
+    tabs = {
+        "overview": "Overview",
+        "library": "Library",
+        "reports": "Reports",
+        "weekly": "Weekly"
+    }
+
+    for key, label in tabs.items():
+        if key == active_page:
+            html += f'<a class="menu-item-active" href="?page={key}" target="_self" >{label}</a>'
+        else:
+            html += f'<a class="menu-item" href="?page={key}" target="_self" >{label}</a>'
+
+    html += '</div>'
 
     st.markdown(html, unsafe_allow_html=True)
 
-page = st.query_params.get("page", "overview")
 
-# возможные страницы для перехода
-tabs = {
-    "overview": "Overview",
-    "library": "Library",
-    "reports": "Reports"
-}
+page = st.query_params.get("page", "overview")
 
 
 
 # делаем кнопки для переход на другую страницу
-# render_genre_buttons(pages=tabs.keys())
-cols = st.columns(len(tabs))
-
-for i, (key, label) in enumerate(tabs.items()):
-    if cols[i].button(label, key=f"menu_{key}"):
-        st.query_params.page = key
-        st.rerun()
+#render_sidebar_menu(tabs, page)
+render_top_menu(page)
 
 
 if page == "overview":
@@ -68,6 +97,8 @@ elif page == "song":
     songs.render()
 elif page == 'reports':
     reports.render()
+elif page == 'weekly':
+    weekly.render()
 else:
     st.write("Page not found")
 
