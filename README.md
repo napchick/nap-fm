@@ -1,50 +1,49 @@
 🇬🇧 English | [🇷🇺 Русский](README.ru.md)
 
 
-# nap-fm — сервис персональной аналитики прослушиваний
+# nap-fm — personal audio analytics service
 
-**nap-fm** — это персональный дашборд для анализа истории прослушиваний музыки.  
-Проект собирает данные из Spotify, сохраняет их в базу данных и визуализирует статистику через веб-интерфейс (на Streamlit).
+**nap-fm** is a personal dashboard for analyzing music listening history.  
+The project collects data from Spotify, stores it in a database, and visualizes statistics through a web interface (built with Streamlit).
 
-Посмотреть на работу сервиса можно по [ссылке](https://nap-fm.streamlit.app/)
+You can explore the live service via this [link](https://nap-fm.streamlit.app/)
 ---
 
-## Возможности
+## Features
 
-- История прослушивания 
-- Информация и статистика по артистам и песням
-- Топы песен и артистов
-- Географическое распределение песен и артистов 
-- Распределение прослушиваний по часам дня
-- Автоматическое обновление данных
-
----
-
-## Статус проекта
-
-Проект находится в активной разработке.  
-На данный момент реализован **полноценный MVP**:
-
-- Интерактивный интерфейс Streamlit  
-- Рабочая база данных со схемой и отношениями 
-- Встроенный сборщик данных 
-- Аналитические страницы 
-- Визуализация
-
-### Планируется:
-
-- Добавление возможности выбора периода для которого будет строиться аналитика(в настоящий момент такое есть, но не везде)  
-- Добавление новой страницы и различной аналитики посвященной жанрам  
-- Больше информации о песнях/артистах
-- Новые графики и таблицы
-- Многопользовательская поддержка  
+- Listening history  
+- Information and statistics about artists and tracks  
+- Top tracks and artists  
+- Geographic distribution of tracks and artists  
+- Distribution of listening activity by hour of the day  
+- Automatic data updates  
 
 ---
 
-## Технологии
+## Project Status
+
+The project is under active development.  
+At the moment, a **fully functional MVP** has been implemented:
+
+- Interactive Streamlit interface  
+- Working database with schema and relationships  
+- Built-in data collection pipeline  
+- Analytical pages  
+- Data visualizations  
+
+### Planned:
+
+- Adding the ability to select a time period for analytics (currently available, but not everywhere)  
+- More detailed information about tracks/artists  
+- New charts and tables  
+- Multi-user support  
+
+---
+
+## Technologies
 
 **Back-end / Data:**
-- Python 3.9 
+- Python 3.9  
 - SQLAlchemy  
 - PostgreSQL (Neon)  
 
@@ -52,17 +51,18 @@
 - Streamlit  
 - Plotly  
 
-**Сбор данных:**
+**Data Collection:**
 - Spotify Web API (Spotipy)  
 - GitHub Actions  
 
-**Инфраструктура:**
-- DBeaver (администрирование базы)  
-- Streamlit Cloud 
+**Infrastructure:**
+- DBeaver (database administration)  
+- Streamlit Cloud  
+
 
 ---
 
-## Скриншоты
+## Screenshots
 
 - ### Overview:
 
