@@ -1,138 +1,138 @@
 {
-    "begin": "2026-02-02T00:00:07.566000Z",
-    "end": "2026-02-09T00:00:07.566000Z",
-    "scrobbles": 570,
-    "artists": 191,
-    "unique_artists": 629,
-    "songs": 330,
-    "unique_songs": 1727,
+    "begin": "2026-02-09T00:00:07.566000Z",
+    "end": "2026-02-16T00:00:07.566000Z",
+    "scrobbles": 466,
+    "artists": 117,
+    "unique_artists": 649,
+    "songs": 224,
+    "unique_songs": 1796,
     "top_songs": [
         {
-            "song_id": 1538,
-            "title": "Безразличие",
-            "count_plays": 12,
-            "logo": "https://i.scdn.co/image/ab67616d0000b27322508a356739536e69bc9aff",
-            "artist_name": "At The Ruins"
+            "song_id": 1653,
+            "title": "Границы",
+            "count_plays": 16,
+            "logo": "https://i.scdn.co/image/ab67616d0000b273f13365abcce66af61d10bbfb",
+            "artist_name": "appliexe"
         },
         {
-            "song_id": 1675,
-            "title": "Медляк",
+            "song_id": 251,
+            "title": "Almost",
             "count_plays": 11,
-            "logo": "https://i.scdn.co/image/ab67616d0000b2731094f3ef9901a145c4ba221f",
-            "artist_name": "Arrhythmia"
+            "logo": "https://i.scdn.co/image/ab67616d0000b273e2f35f476c6a0791fca8f1cc",
+            "artist_name": "Lewis Capaldi"
         },
         {
-            "song_id": 1686,
-            "title": "Gateways - Live in Oslo",
-            "count_plays": 10,
-            "logo": "https://i.scdn.co/image/ab67616d0000b2731e13f79b5c174b8c12278d54",
-            "artist_name": "Dimmu Borgir"
+            "song_id": 78,
+            "title": "Изоляция - OST «Мир кораблей»",
+            "count_plays": 11,
+            "logo": "https://i.scdn.co/image/ab67616d0000b27330c9e46798355cf7207b1974",
+            "artist_name": "TRITIA"
         },
         {
             "song_id": 1585,
             "title": "New World",
-            "count_plays": 9,
+            "count_plays": 10,
             "logo": "https://i.scdn.co/image/ab67616d0000b2736112ff0f70ca4a268b052838",
             "artist_name": "Revnoir"
         },
         {
-            "song_id": 1653,
-            "title": "Границы",
+            "song_id": 1663,
+            "title": "Beckoning",
             "count_plays": 9,
-            "logo": "https://i.scdn.co/image/ab67616d0000b273f13365abcce66af61d10bbfb",
-            "artist_name": "appliexe"
+            "logo": "https://i.scdn.co/image/ab67616d0000b273cf13667519b43b5560b70bf7",
+            "artist_name": "Design The Skyline"
         }
     ],
     "top_artists": [
         {
-            "artist_id": 1,
-            "count_plays": 30,
-            "photo": "https://i.scdn.co/image/ab6761610000e5eb44b07362e94585ebd7c564c9",
-            "artist_name": "Shakira"
+            "artist_id": 50,
+            "count_plays": 61,
+            "photo": "https://i.scdn.co/image/ab6761610000e5eb17e112310b72bdcad53098bb",
+            "artist_name": "TRITIA"
         },
         {
-            "artist_id": 14,
+            "artist_id": 262,
             "count_plays": 25,
-            "photo": "https://i.scdn.co/image/fc4e0f474fb4c4cb83617aa884dc9fd9822d4411",
-            "artist_name": "Frank Sinatra"
+            "photo": "https://i.scdn.co/image/ab6761610000e5eb763469d49447da0f04203dbd",
+            "artist_name": "Би-2"
+        },
+        {
+            "artist_id": 39,
+            "count_plays": 23,
+            "photo": "https://i.scdn.co/image/ab6761610000e5ebdc9e707b0d0e591e08d3f549",
+            "artist_name": "Lewis Capaldi"
+        },
+        {
+            "artist_id": 11,
+            "count_plays": 17,
+            "photo": "https://i.scdn.co/image/ab6761610000e5ebb0c6f5984f68e58fb83d90b5",
+            "artist_name": "appliexe"
         },
         {
             "artist_id": 85,
-            "count_plays": 20,
+            "count_plays": 17,
             "photo": "https://i.scdn.co/image/ab6761610000e5eb7ed4c75b6d9d59dba78aec4d",
             "artist_name": "Гости Гаррисона"
-        },
-        {
-            "artist_id": 576,
-            "count_plays": 19,
-            "photo": "https://i.scdn.co/image/ab67616d0000b273be1e12d15a081f3225eef160",
-            "artist_name": "At The Ruins"
-        },
-        {
-            "artist_id": 340,
-            "count_plays": 18,
-            "photo": "https://i.scdn.co/image/ab6761610000e5eb8d8a446c8e8bee797797436f",
-            "artist_name": "Dimmu Borgir"
         }
     ],
     "top_genres": [
         {
-            "new_genre": "rock",
-            "count": 71
+            "new_genre": "metal",
+            "count": 48
         },
         {
             "new_genre": "metalcore",
-            "count": 70
+            "count": 47
         },
         {
-            "new_genre": "metal",
-            "count": 68
-        },
-        {
-            "new_genre": "oldies",
-            "count": 57
+            "new_genre": "rock",
+            "count": 40
         },
         {
             "new_genre": "pop",
-            "count": 49
+            "count": 34
+        },
+        {
+            "new_genre": "jazz",
+            "count": 31
         }
     ],
     "songs_per_decade": [
         {
             "song_year": "1930",
             "total_songs": 1,
-            "top_song_id": 603,
-            "title": "I Don't Want to Set the World on Fire - Rerecorded",
-            "logo": "https://i.scdn.co/image/ab67616d0000b273297454354d914cc75128a9f0",
-            "artist_name": "The Ink Spots"
+            "top_song_id": 1745,
+            "title": "Roll 'Em",
+            "logo": "https://i.scdn.co/image/ab67616d0000b273b431545ded22c02473398001",
+            "artist_name": "Benny Goodman and his orchestra"
         },
         {
             "song_year": "1950",
-            "total_songs": 9,
-            "top_song_id": 1667,
-            "title": "I've Got You Under My Skin - Remastered 1998",
-            "logo": "https://i.scdn.co/image/ab67616d0000b273d7720a6a8b713b833313f396",
-            "artist_name": "Frank Sinatra"
+            "total_songs": 4,
+            "top_song_id": 1790,
+            "title": "Devoted to You",
+            "logo": "https://i.scdn.co/image/ab67616d0000b2736d587685a84d02a7bd3f5748",
+            "artist_name": "The Everly Brothers"
         },
         {
             "song_year": "1960",
-            "total_songs": 22,
-            "top_song_id": 86,
-            "title": "The Way You Look Tonight",
-            "logo": "https://i.scdn.co/image/ab67616d0000b273ff0dae802acb38075786b58c",
-            "artist_name": "Frank Sinatra"
+            "total_songs": 15,
+            "top_song_id": 1525,
+            "title": "Crying in the Rain",
+            "logo": "https://i.scdn.co/image/ab67616d0000b2733b56057c89ad8a6fbb867a01",
+            "artist_name": "The Everly Brothers"
         },
         {
             "song_year": "1970",
-            "total_songs": 22,
-            "top_song_id": 416,
-            "title": "Sorry Seems To Be The Hardest Word",
-            "logo": "https://i.scdn.co/image/ab67616d0000b2730a42acd87042fce27b547618",
-            "artist_name": "Elton John"
+            "total_songs": 8,
+            "top_song_id": 600,
+            "title": "When A Blind Man Cries (1997 Remix)",
+            "logo": "https://i.scdn.co/image/ab67616d0000b273e73283547df6735c5db0ba45",
+            "artist_name": "Deep Purple"
         },
         {
             "song_year": "1980",
-            "total_songs": 22,
+            "total_songs": 15,
             "top_song_id": 1648,
             "title": "Billie Jean",
             "logo": "https://i.scdn.co/image/ab67616d0000b27332a7d87248d1b75463483df5",
@@ -140,65 +140,69 @@
         },
         {
             "song_year": "1990",
-            "total_songs": 33,
-            "top_song_id": 1171,
-            "title": "Lollipop (Candyman)",
-            "logo": "https://i.scdn.co/image/ab67616d0000b273f5768db89dd8ac30fd0e414f",
-            "artist_name": "Aqua"
+            "total_songs": 19,
+            "top_song_id": 1063,
+            "title": "Ordinary World",
+            "logo": "https://i.scdn.co/image/ab67616d0000b2735d11c2fe73a7d376d3b06107",
+            "artist_name": "Duran Duran"
         },
         {
             "song_year": "2000",
-            "total_songs": 36,
-            "top_song_id": 26,
-            "title": "Hips Don't Lie (feat. Wyclef Jean)",
-            "logo": "https://i.scdn.co/image/ab67616d0000b27385432abc16fd92be0d435cb9",
-            "artist_name": "Shakira"
+            "total_songs": 28,
+            "top_song_id": 1733,
+            "title": "Te quiero puta!",
+            "logo": "https://i.scdn.co/image/ab67616d0000b2734ea617c398a01a5228069744",
+            "artist_name": "Rammstein"
         },
         {
             "song_year": "2010",
-            "total_songs": 73,
-            "top_song_id": 1686,
-            "title": "Gateways - Live in Oslo",
-            "logo": "https://i.scdn.co/image/ab67616d0000b2731e13f79b5c174b8c12278d54",
-            "artist_name": "Dimmu Borgir"
+            "total_songs": 53,
+            "top_song_id": 726,
+            "title": "Bravo tu as gagné",
+            "logo": "https://i.scdn.co/image/ab67616d0000b2739839a01a2b0097e68787bf10",
+            "artist_name": "Mireille Mathieu"
         },
         {
             "song_year": "2020",
-            "total_songs": 112,
-            "top_song_id": 1538,
-            "title": "Безразличие",
-            "logo": "https://i.scdn.co/image/ab67616d0000b27322508a356739536e69bc9aff",
-            "artist_name": "At The Ruins"
+            "total_songs": 81,
+            "top_song_id": 1653,
+            "title": "Границы",
+            "logo": "https://i.scdn.co/image/ab67616d0000b273f13365abcce66af61d10bbfb",
+            "artist_name": "appliexe"
         }
     ],
     "songs_per_hours": [
         {
             "hour": 0,
-            "plays": 24
+            "plays": 7
         },
         {
             "hour": 1,
-            "plays": 9
+            "plays": 11
         },
         {
             "hour": 2,
-            "plays": 15
+            "plays": 11
         },
         {
             "hour": 3,
-            "plays": 14
+            "plays": 8
         },
         {
             "hour": 4,
             "plays": 3
         },
         {
-            "hour": 8,
+            "hour": 5,
             "plays": 1
         },
         {
-            "hour": 10,
-            "plays": 1
+            "hour": 6,
+            "plays": 4
+        },
+        {
+            "hour": 7,
+            "plays": 9
         },
         {
             "hour": 11,
@@ -206,73 +210,73 @@
         },
         {
             "hour": 12,
-            "plays": 7
+            "plays": 13
         },
         {
             "hour": 13,
-            "plays": 33
+            "plays": 27
         },
         {
             "hour": 14,
-            "plays": 54
+            "plays": 16
         },
         {
             "hour": 15,
-            "plays": 45
-        },
-        {
-            "hour": 16,
             "plays": 41
         },
         {
+            "hour": 16,
+            "plays": 58
+        },
+        {
             "hour": 17,
-            "plays": 66
+            "plays": 57
         },
         {
             "hour": 18,
-            "plays": 68
+            "plays": 52
         },
         {
             "hour": 19,
-            "plays": 40
+            "plays": 25
         },
         {
             "hour": 20,
-            "plays": 23
+            "plays": 24
         },
         {
             "hour": 21,
-            "plays": 54
+            "plays": 27
         },
         {
             "hour": 22,
-            "plays": 40
+            "plays": 38
         },
         {
             "hour": 23,
-            "plays": 31
+            "plays": 33
         }
     ],
     "songs_per_countries": [
         {
-            "country": "US",
-            "count": 152
+            "country": "RU",
+            "count": 167
         },
         {
-            "country": "RU",
-            "count": 151
+            "country": "US",
+            "count": 104
         },
         {
             "country": "GB",
-            "count": 88
+            "count": 65
         },
         {
             "country": "FR",
             "count": 31
         },
         {
-            "country": "CO",
-            "count": 30
+            "country": "SE",
+            "count": 24
         }
     ]
 }

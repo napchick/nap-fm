@@ -9,7 +9,8 @@ with open("weekly_data.json", "r", encoding="utf-8") as f:
     loaded = json.load(f)
 
 # начало нового периоды. Пока так, но потом берем end из json
-begin = loaded['end']
+#begin = loaded['end']
+begin = datetime.strptime(loaded['end'], "%Y-%m-%dT%H:%M:%S.%fZ")
 #begin = datetime.strptime('2026-02-02T00:00:07.566Z', "%Y-%m-%dT%H:%M:%S.%fZ") # "%Y-%m-%dT%H:%M:%SZ"
 # Конец текущего периода
 end = begin + timedelta(weeks=1)
@@ -38,7 +39,6 @@ songs_per_hours = pd.read_sql(pr.get_songs_per_hours(f"where time >= '{begin}'")
 songs_per_countries = pd.read_sql(pr.get_songs_per_country(f"where h.time >= '{begin}' and a.country is not null", 
                                                            'limit 5'), engine)
 
-print(artists)
 
 
 data = {
