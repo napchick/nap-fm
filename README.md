@@ -6,7 +6,7 @@
 **nap-fm** is a personal dashboard for analyzing music listening history.  
 The project collects data from Spotify, stores it in a database, and visualizes statistics through a web interface (built with Streamlit).
 
-You can explore the live service via this [link](https://nap-fm.streamlit.app/)
+You can explore the live service via this [link](https://nap-fm.streamlit.app/) (temporarily out of service)
 ---
 
 ## Features
