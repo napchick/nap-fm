@@ -11,14 +11,18 @@ with open("weekly_data.json", "r", encoding="utf-8") as f:
 # начало нового периоды. Пока так, но потом берем end из json
 #begin = loaded['end']
 begin = datetime.strptime(loaded['end'], "%Y-%m-%dT%H:%M:%S.%fZ")
-#begin = datetime.strptime('2026-02-02T00:00:07.566Z', "%Y-%m-%dT%H:%M:%S.%fZ") # "%Y-%m-%dT%H:%M:%SZ"
+#begin = datetime.strptime('2026-02-23T00:00:07.566Z', "%Y-%m-%dT%H:%M:%S.%fZ") # "%Y-%m-%dT%H:%M:%SZ"
 # Конец текущего периода
 end = begin + timedelta(weeks=1)
 
 # Количество прослушиваний за неделю
 scrobbles = pd.read_sql(pr.get_scrobbles(f"where time >= '{begin}'"), engine)['count'].iloc[0]
+# Количество прослушиваний за предыдущую неделю
+scrobbles_prev = loaded["scrobbles"]
 # Количество уникальных артистов
 artists = pd.read_sql(pr.get_unique_artists(f"where h.time >= '{begin}'"), engine)['artists_count'].iloc[0]
+# Количество артистов за предыдущую неделю
+artists_prev = loaded["artists"]
 # Количество уникальных артистов всего. 
 unique_artists = pd.read_sql(pr.unique_artists, engine)['artists_count'].iloc[0]
 # Количество уникальных песен
@@ -45,7 +49,9 @@ data = {
     'begin': begin.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
     'end': end.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
     'scrobbles': int(scrobbles),
+    'scrobbles_prev': int(scrobbles_prev),
     'artists': int(artists),
+    'artists_prev': int(artists_prev),
     'unique_artists': int(unique_artists),
     'songs': int(songs),
     'unique_songs': int(unique_songs),

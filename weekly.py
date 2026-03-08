@@ -15,7 +15,9 @@ with open("weekly_data.json", "r", encoding="utf-8") as f:
 begin = loaded['begin']
 end = loaded['end']
 scrobbles = loaded["scrobbles"]
+scrobbles_prev = loaded['scrobbles_prev']
 artists = loaded['artists']
+artists_prev = loaded['artists_prev']
 unique_artists = loaded['unique_artists']
 # songs = loaded['songs']
 # unique_songs = loaded['unique_songs']
@@ -37,11 +39,11 @@ def render():
 
     with col1:
         # ------------------------------- Количество прослушиваний ---------------------------
-        diff_songs = scrobbles - 234
+        diff_songs = scrobbles - scrobbles_prev
         if diff_songs > 0:
-            diff = f"↑{(diff_songs / 234) * 100:.0f}% vs. last week"
+            diff = f"↑{(diff_songs / scrobbles_prev) * 100:.0f}% vs. last week"
         else:
-            diff = f"↓{(abs(diff_songs) / 234) * 100:.0f}% vs. last week"
+            diff = f"↓{(abs(diff_songs) / scrobbles_prev) * 100:.0f}% vs. last week"
         st.markdown(
             f"""
             <div style="
@@ -139,11 +141,11 @@ def render():
 
     with col2:
         # ----------------------------------- Кол-во прослушанных артистов -------------------------------------
-        diff_artists = artists - 80
+        diff_artists = artists - artists_prev
         if diff_artists > 0:
-            diff = f"↑{(diff_artists / 80) * 100:.0f}% vs. last week"
+            diff = f"↑{(diff_artists / artists_prev) * 100:.0f}% vs. last week"
         else:
-            diff = f'↓{(abs(diff_artists) / 80) * 100:.0f}% vs. last weeks'
+            diff = f'↓{(abs(diff_artists) / artists_prev) * 100:.0f}% vs. last weeks'
         st.markdown(
             f"""
             <div style="
