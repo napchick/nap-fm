@@ -1,180 +1,148 @@
 {
-    "begin": "2026-03-01T00:00:07.566000Z",
-    "end": "2026-03-08T00:00:07.566000Z",
-    "scrobbles": 668,
-    "scrobbles_prev": 466,
-    "artists": 183,
-    "artists_prev": 117,
+    "begin": "2026-03-08T00:00:07.566000Z",
+    "end": "2026-03-15T00:00:07.566000Z",
+    "scrobbles": 16,
+    "scrobbles_prev": 668,
+    "artists": 12,
+    "artists_prev": 183,
     "unique_artists": 678,
-    "songs": 338,
+    "songs": 15,
     "unique_songs": 1886,
     "top_songs": [
         {
             "song_id": 1868,
             "title": "Ориентир",
-            "count_plays": 22,
+            "count_plays": 2,
             "logo": "https://i.scdn.co/image/ab67616d0000b2739e65f46b1d59b841bcbe506a",
             "artist_name": "appliexe"
         },
         {
-            "song_id": 1799,
-            "title": "Butterfly Effect",
-            "count_plays": 14,
-            "logo": "https://i.scdn.co/image/ab67616d0000b273b3045a7f3d1b5dffe83ed176",
-            "artist_name": "Sweet Lizzy Project"
+            "song_id": 226,
+            "title": "Молоко",
+            "count_plays": 1,
+            "logo": "https://i.scdn.co/image/ab67616d0000b273abf10bce782e489e1f5b23ec",
+            "artist_name": "Гости Гаррисона"
         },
         {
-            "song_id": 251,
-            "title": "Almost",
-            "count_plays": 13,
-            "logo": "https://i.scdn.co/image/ab67616d0000b273e2f35f476c6a0791fca8f1cc",
-            "artist_name": "Lewis Capaldi"
+            "song_id": 353,
+            "title": "Where Do I Begin - Love Theme from \"Love Story\"",
+            "count_plays": 1,
+            "logo": "https://i.scdn.co/image/ab67616d0000b2739ffbe027325528769963c0ce",
+            "artist_name": "Andy Williams"
         },
         {
-            "song_id": 1781,
-            "title": "It's A Sin",
-            "count_plays": 13,
-            "logo": "https://i.scdn.co/image/ab67616d0000b2735deeeb5b1d590c9eff4b0fd7",
-            "artist_name": "Ghost"
+            "song_id": 417,
+            "title": "Something About The Way You Look Tonight - Edit Version",
+            "count_plays": 1,
+            "logo": "https://i.scdn.co/image/ab67616d0000b27352a56df14c3a5e318925787c",
+            "artist_name": "Elton John"
         },
         {
-            "song_id": 1653,
-            "title": "Границы",
-            "count_plays": 12,
-            "logo": "https://i.scdn.co/image/ab67616d0000b273f13365abcce66af61d10bbfb",
-            "artist_name": "appliexe"
+            "song_id": 205,
+            "title": "Ядовит",
+            "count_plays": 1,
+            "logo": "https://i.scdn.co/image/ab67616d0000b273baee9a1b2b74140f2f1cad0f",
+            "artist_name": "Гости Гаррисона"
         }
     ],
     "top_artists": [
         {
             "artist_id": 11,
-            "count_plays": 44,
+            "count_plays": 3,
             "photo": "https://i.scdn.co/image/ab6761610000e5ebb0c6f5984f68e58fb83d90b5",
             "artist_name": "appliexe"
         },
         {
-            "artist_id": 14,
-            "count_plays": 39,
-            "photo": "https://i.scdn.co/image/fc4e0f474fb4c4cb83617aa884dc9fd9822d4411",
-            "artist_name": "Frank Sinatra"
-        },
-        {
-            "artist_id": 50,
-            "count_plays": 36,
-            "photo": "https://i.scdn.co/image/ab6761610000e5eb17e112310b72bdcad53098bb",
-            "artist_name": "TRITIA"
+            "artist_id": 4,
+            "count_plays": 2,
+            "photo": "https://i.scdn.co/image/ab6761610000e5eb7f601bb7f0ab90e0f01839a8",
+            "artist_name": "[AMATORY]"
         },
         {
             "artist_id": 85,
-            "count_plays": 25,
+            "count_plays": 2,
             "photo": "https://i.scdn.co/image/ab6761610000e5eb7ed4c75b6d9d59dba78aec4d",
             "artist_name": "Гости Гаррисона"
         },
         {
-            "artist_id": 472,
-            "count_plays": 18,
-            "photo": "https://i.scdn.co/image/ab6761610000e5eb2d972470f1f8110be7c07017",
-            "artist_name": "Ghost"
+            "artist_id": 80,
+            "count_plays": 1,
+            "photo": "https://i.scdn.co/image/ab6761610000e5ebb6f2737a61158bf977b9dcdf",
+            "artist_name": "Black Veil Brides"
+        },
+        {
+            "artist_id": 50,
+            "count_plays": 1,
+            "photo": "https://i.scdn.co/image/ab6761610000e5eb17e112310b72bdcad53098bb",
+            "artist_name": "TRITIA"
         }
     ],
     "top_genres": [
         {
             "new_genre": "metalcore",
-            "count": 99
-        },
-        {
-            "new_genre": "rock",
-            "count": 90
-        },
-        {
-            "new_genre": "metal",
-            "count": 84
+            "count": 4
         },
         {
             "new_genre": "oldies",
-            "count": 65
+            "count": 3
+        },
+        {
+            "new_genre": "deathcore",
+            "count": 1
         },
         {
             "new_genre": "jazz",
-            "count": 61
+            "count": 1
+        },
+        {
+            "new_genre": "metal",
+            "count": 1
         }
     ],
     "songs_per_decade": [
         {
-            "song_year": "1920",
-            "total_songs": 1,
-            "top_song_id": 863,
-            "title": "I Wanna Be Loved by You",
-            "logo": "https://i.scdn.co/image/ab67616d0000b273681be700106a5af05ff75dca",
-            "artist_name": "Helen Kane"
-        },
-        {
-            "song_year": "1940",
-            "total_songs": 2,
-            "top_song_id": 1827,
-            "title": "It Had To Be You",
-            "logo": "https://i.scdn.co/image/ab67616d0000b273410be1056698ccd868d06093",
-            "artist_name": "Betty Hutton"
-        },
-        {
-            "song_year": "1950",
-            "total_songs": 9,
-            "top_song_id": 1837,
-            "title": "It Might As Well Be Spring",
-            "logo": "https://i.scdn.co/image/ab67616d0000b273ed6f376f51a87d8f62af730c",
-            "artist_name": "Blossom Dearie"
-        },
-        {
             "song_year": "1960",
-            "total_songs": 25,
-            "top_song_id": 241,
-            "title": "Strangers In The Night",
-            "logo": "https://i.scdn.co/image/ab67616d0000b27350bb7ca1fe7e98df87ce41d9",
-            "artist_name": "Frank Sinatra"
+            "total_songs": 1,
+            "top_song_id": 560,
+            "title": "Everybody Loves Somebody",
+            "logo": "https://i.scdn.co/image/ab67616d0000b273ba93cb5d7f8450ac548e04b6",
+            "artist_name": "Dean Martin"
         },
         {
             "song_year": "1970",
-            "total_songs": 18,
-            "top_song_id": 37,
-            "title": "Love Theme From \"The Godfather\" - From \"The Godfather\" Soundtrack",
-            "logo": "https://i.scdn.co/image/ab67616d0000b273f2c15766a9a514511a48f3b1",
-            "artist_name": "Nino Rota"
-        },
-        {
-            "song_year": "1980",
-            "total_songs": 14,
-            "top_song_id": 1648,
-            "title": "Billie Jean",
-            "logo": "https://i.scdn.co/image/ab67616d0000b27332a7d87248d1b75463483df5",
-            "artist_name": "Michael Jackson"
+            "total_songs": 2,
+            "top_song_id": 353,
+            "title": "Where Do I Begin - Love Theme from \"Love Story\"",
+            "logo": "https://i.scdn.co/image/ab67616d0000b2739ffbe027325528769963c0ce",
+            "artist_name": "Andy Williams"
         },
         {
             "song_year": "1990",
-            "total_songs": 27,
-            "top_song_id": 1089,
-            "title": "Tú",
-            "logo": "https://i.scdn.co/image/ab67616d0000b273bfcff1dd252b22bba16a2a5d",
-            "artist_name": "Shakira"
+            "total_songs": 1,
+            "top_song_id": 417,
+            "title": "Something About The Way You Look Tonight - Edit Version",
+            "logo": "https://i.scdn.co/image/ab67616d0000b27352a56df14c3a5e318925787c",
+            "artist_name": "Elton John"
         },
         {
             "song_year": "2000",
-            "total_songs": 50,
-            "top_song_id": 356,
-            "title": "Theme From New York, New York - 2008 Remastered",
-            "logo": "https://i.scdn.co/image/ab67616d0000b273b81d66d1416afa139d12767b",
-            "artist_name": "Frank Sinatra"
+            "total_songs": 3,
+            "top_song_id": 1095,
+            "title": "Слишком поздно",
+            "logo": "https://i.scdn.co/image/ab67616d0000b273e819712d4cc8286f768a3714",
+            "artist_name": "[AMATORY]"
         },
         {
             "song_year": "2010",
-            "total_songs": 78,
-            "top_song_id": 10,
-            "title": "Pardonne-moi ce caprice d'enfant",
-            "logo": "https://i.scdn.co/image/ab67616d0000b2739839a01a2b0097e68787bf10",
-            "artist_name": "Mireille Mathieu"
+            "total_songs": 2,
+            "top_song_id": 1566,
+            "title": "Hostage",
+            "logo": "https://i.scdn.co/image/ab67616d0000b27382b1938bc500f76630ed5e87",
+            "artist_name": "Chelsea Grin"
         },
         {
             "song_year": "2020",
-            "total_songs": 114,
+            "total_songs": 6,
             "top_song_id": 1868,
             "title": "Ориентир",
             "logo": "https://i.scdn.co/image/ab67616d0000b2739e65f46b1d59b841bcbe506a",
@@ -183,114 +151,46 @@
     ],
     "songs_per_hours": [
         {
-            "hour": 0,
-            "plays": 38
-        },
-        {
-            "hour": 1,
-            "plays": 25
-        },
-        {
-            "hour": 2,
-            "plays": 14
-        },
-        {
-            "hour": 3,
-            "plays": 8
-        },
-        {
-            "hour": 4,
-            "plays": 7
-        },
-        {
-            "hour": 5,
-            "plays": 1
-        },
-        {
-            "hour": 6,
-            "plays": 1
-        },
-        {
-            "hour": 7,
-            "plays": 3
-        },
-        {
-            "hour": 10,
-            "plays": 3
-        },
-        {
             "hour": 11,
-            "plays": 7
+            "plays": 1
         },
         {
             "hour": 12,
-            "plays": 19
+            "plays": 2
         },
         {
             "hour": 13,
-            "plays": 38
+            "plays": 1
         },
         {
             "hour": 14,
-            "plays": 75
-        },
-        {
-            "hour": 15,
-            "plays": 43
-        },
-        {
-            "hour": 16,
-            "plays": 55
-        },
-        {
-            "hour": 17,
-            "plays": 41
-        },
-        {
-            "hour": 18,
-            "plays": 72
-        },
-        {
-            "hour": 19,
-            "plays": 44
-        },
-        {
-            "hour": 20,
-            "plays": 53
-        },
-        {
-            "hour": 21,
-            "plays": 59
+            "plays": 2
         },
         {
             "hour": 22,
-            "plays": 33
+            "plays": 1
         },
         {
             "hour": 23,
-            "plays": 29
+            "plays": 9
         }
     ],
     "songs_per_countries": [
         {
-            "country": "US",
-            "count": 188
+            "country": "RU",
+            "count": 9
         },
         {
-            "country": "RU",
-            "count": 185
+            "country": "US",
+            "count": 5
         },
         {
             "country": "GB",
-            "count": 94
+            "count": 1
         },
         {
-            "country": "FR",
-            "count": 27
-        },
-        {
-            "country": "BY",
-            "count": 24
+            "country": "IT",
+            "count": 1
         }
     ]
 }
