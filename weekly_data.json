@@ -1,78 +1,78 @@
 {
-    "begin": "2026-03-15T00:00:07.566000Z",
-    "end": "2026-03-22T00:00:07.566000Z",
-    "scrobbles": 360,
-    "scrobbles_prev": 287,
-    "artists": 151,
-    "artists_prev": 131,
-    "unique_artists": 735,
-    "songs": 232,
-    "unique_songs": 2013,
+    "begin": "2026-03-22T00:00:07.566000Z",
+    "end": "2026-03-29T00:00:07.566000Z",
+    "scrobbles": 171,
+    "scrobbles_prev": 360,
+    "artists": 88,
+    "artists_prev": 151,
+    "unique_artists": 744,
+    "songs": 126,
+    "unique_songs": 2035,
     "top_songs": [
         {
-            "song_id": 1938,
-            "title": "Red Ice",
-            "count_plays": 21,
-            "logo": "https://i.scdn.co/image/ab67616d0000b273f9de4767f57baf779a29677c",
-            "artist_name": "REVNOIR"
+            "song_id": 2022,
+            "title": "Prekrasnoe Dalyoko",
+            "count_plays": 8,
+            "logo": "https://i.scdn.co/image/ab67616d0000b273bb984aaf874f8419b764dc09",
+            "artist_name": "PARTICLES"
         },
         {
-            "song_id": 1115,
-            "title": "Беги вслед за мной",
-            "count_plays": 10,
-            "logo": "https://i.scdn.co/image/ab67616d0000b2738d596f1fbcbaac07dfd4cca0",
-            "artist_name": "[AMATORY]"
+            "song_id": 1961,
+            "title": "Abracadabra",
+            "count_plays": 8,
+            "logo": "https://i.scdn.co/image/ab67616d0000b273b0860cf0a98e09663c82290c",
+            "artist_name": "Lady Gaga"
         },
         {
-            "song_id": 1845,
-            "title": "Woman in Love",
-            "count_plays": 7,
-            "logo": "https://i.scdn.co/image/ab67616d0000b273af1bb86907b4457c4e83390f",
-            "artist_name": "Barbra Streisand"
-        },
-        {
-            "song_id": 1947,
-            "title": "Otra Como Tu",
-            "count_plays": 7,
-            "logo": "https://i.scdn.co/image/ab67616d0000b273c8729fbeebb389680f1e6ee5",
-            "artist_name": "Eros Ramazzotti"
+            "song_id": 2004,
+            "title": "dying on the inside",
+            "count_plays": 8,
+            "logo": "https://i.scdn.co/image/ab67616d0000b273ae94cf350579f2cbb17376f8",
+            "artist_name": "Nessa Barrett"
         },
         {
             "song_id": 1997,
             "title": "Юдоль",
-            "count_plays": 7,
+            "count_plays": 6,
             "logo": "https://i.scdn.co/image/ab67616d0000b273c812e1c9bdf7570c4babf0e7",
             "artist_name": "RAVANNA"
+        },
+        {
+            "song_id": 1652,
+            "title": "Trava u Doma (Geoffrey Day Remix)",
+            "count_plays": 4,
+            "logo": "https://i.scdn.co/image/ab67616d0000b273d5c0a5bc4afd1d9d16cac98e",
+            "artist_name": "Geoffplaysguitar"
         }
     ],
     "top_artists": [
         {
-            "artist_id": 668,
-            "count_plays": 34,
-            "photo": "https://i.scdn.co/image/ab6761610000e5eb2a0f77876db23a312580883b",
-            "artist_name": "REVNOIR"
-        },
-        {
             "artist_id": 4,
-            "count_plays": 24,
+            "count_plays": 12,
             "photo": "https://i.scdn.co/image/ab6761610000e5eb7f601bb7f0ab90e0f01839a8",
             "artist_name": "[AMATORY]"
         },
         {
-            "artist_id": 160,
-            "count_plays": 10,
-            "photo": "https://i.scdn.co/image/ab6761610000e5eb28b456b05c5c79c55087fea5",
-            "artist_name": "Eros Ramazzotti"
+            "artist_id": 84,
+            "count_plays": 9,
+            "photo": "https://i.scdn.co/image/ab6761610000e5ebaadc18cac8d48124357c38e6",
+            "artist_name": "Lady Gaga"
         },
         {
-            "artist_id": 39,
-            "count_plays": 10,
-            "photo": "https://i.scdn.co/image/ab6761610000e5ebdc9e707b0d0e591e08d3f549",
-            "artist_name": "Lewis Capaldi"
+            "artist_id": 741,
+            "count_plays": 8,
+            "photo": "https://i.scdn.co/image/ab6761610000e5eb065faf07b0343e97bf3fba57",
+            "artist_name": "PARTICLES"
+        },
+        {
+            "artist_id": 718,
+            "count_plays": 8,
+            "photo": "https://i.scdn.co/image/ab6761610000e5eb1f4b6c0c5a69cc28880f833f",
+            "artist_name": "Nessa Barrett"
         },
         {
             "artist_id": 32,
-            "count_plays": 9,
+            "count_plays": 6,
             "photo": "https://i.scdn.co/image/ab6761610000e5ebe5978153389283f8e70895a5",
             "artist_name": "RAVANNA"
         }
@@ -80,201 +80,177 @@
     "top_genres": [
         {
             "new_genre": "metalcore",
-            "count": 85
+            "count": 27
         },
         {
             "new_genre": "pop",
-            "count": 50
+            "count": 23
         },
         {
             "new_genre": "rock",
-            "count": 45
-        },
-        {
-            "new_genre": "metal",
-            "count": 44
+            "count": 15
         },
         {
             "new_genre": "oldies",
-            "count": 24
+            "count": 10
+        },
+        {
+            "new_genre": "metal",
+            "count": 9
         }
     ],
     "songs_per_decade": [
         {
-            "song_year": "1920",
-            "total_songs": 1,
-            "top_song_id": 1952,
-            "title": "Heebie Jeebies",
-            "logo": "https://i.scdn.co/image/ab67616d0000b273d1b8ab1f81de40bd494eff20",
-            "artist_name": "Louis Armstrong & His Hot Five"
-        },
-        {
-            "song_year": "1930",
-            "total_songs": 1,
-            "top_song_id": 603,
-            "title": "I Don't Want to Set the World on Fire - Rerecorded",
-            "logo": "https://i.scdn.co/image/ab67616d0000b273297454354d914cc75128a9f0",
-            "artist_name": "The Ink Spots"
-        },
-        {
             "song_year": "1950",
-            "total_songs": 3,
-            "top_song_id": 1987,
-            "title": "I Fall In Love Too Easily",
-            "logo": "https://i.scdn.co/image/ab67616d0000b273309ae95ef92cb8b068e7ce52",
-            "artist_name": "Chet Baker"
+            "total_songs": 1,
+            "top_song_id": 60,
+            "title": "Autumn Leaves - Remastered 1987",
+            "logo": "https://i.scdn.co/image/ab67616d0000b2738db55b7cb540f7ab7c344d1b",
+            "artist_name": "Nat King Cole"
         },
         {
             "song_year": "1960",
-            "total_songs": 16,
-            "top_song_id": 7,
-            "title": "The Sunshine Of Love - Single Version",
-            "logo": "https://i.scdn.co/image/ab67616d0000b273845a5660b804e5f3e821fbed",
-            "artist_name": "Louis Armstrong's Orchestra And Chorus"
+            "total_songs": 5,
+            "top_song_id": 669,
+            "title": "Moon River (From \"Breakfast at Tiffany's\")",
+            "logo": "https://i.scdn.co/image/ab67616d0000b2736b51b2bd0ca77a53eb4cd14c",
+            "artist_name": "Andy Williams"
         },
         {
             "song_year": "1970",
-            "total_songs": 10,
-            "top_song_id": 1845,
-            "title": "Woman in Love",
-            "logo": "https://i.scdn.co/image/ab67616d0000b273af1bb86907b4457c4e83390f",
-            "artist_name": "Barbra Streisand"
+            "total_songs": 9,
+            "top_song_id": 1673,
+            "title": "Echoes",
+            "logo": "https://i.scdn.co/image/ab67616d0000b2739eee212bba82bed8da96a8f7",
+            "artist_name": "Pink Floyd"
         },
         {
             "song_year": "1980",
-            "total_songs": 7,
-            "top_song_id": 905,
-            "title": "Your Latest Trick - Remastered 1996",
-            "logo": "https://i.scdn.co/image/ab67616d0000b27358c4e9c84ece7d31f51636f3",
-            "artist_name": "Dire Straits"
+            "total_songs": 2,
+            "top_song_id": 1241,
+            "title": "It's a Sin - 2018 Remaster",
+            "logo": "https://i.scdn.co/image/ab67616d0000b27331f17f2b636f0f1c8d83dc42",
+            "artist_name": "Pet Shop Boys"
         },
         {
             "song_year": "1990",
-            "total_songs": 20,
-            "top_song_id": 1947,
-            "title": "Otra Como Tu",
-            "logo": "https://i.scdn.co/image/ab67616d0000b273c8729fbeebb389680f1e6ee5",
-            "artist_name": "Eros Ramazzotti"
+            "total_songs": 13,
+            "top_song_id": 1171,
+            "title": "Lollipop (Candyman)",
+            "logo": "https://i.scdn.co/image/ab67616d0000b273f5768db89dd8ac30fd0e414f",
+            "artist_name": "Aqua"
         },
         {
             "song_year": "2000",
-            "total_songs": 36,
-            "top_song_id": 1115,
-            "title": "Беги вслед за мной",
-            "logo": "https://i.scdn.co/image/ab67616d0000b2738d596f1fbcbaac07dfd4cca0",
+            "total_songs": 30,
+            "top_song_id": 2029,
+            "title": "Багровый рассвет",
+            "logo": "https://i.scdn.co/image/ab67616d0000b273d700f8f4c8d07304d512df93",
             "artist_name": "[AMATORY]"
         },
         {
             "song_year": "2010",
-            "total_songs": 52,
-            "top_song_id": 1891,
-            "title": "Without Me",
-            "logo": "https://i.scdn.co/image/ab67616d0000b2737636e1c9e67eaafc9f49aefd",
-            "artist_name": "Halsey"
+            "total_songs": 32,
+            "top_song_id": 1937,
+            "title": "Love Me Like You Do - From \"Fifty Shades Of Grey\"",
+            "logo": "https://i.scdn.co/image/ab67616d0000b2736bdee14242f244d9d6ddf2fd",
+            "artist_name": "Ellie Goulding"
         },
         {
             "song_year": "2020",
-            "total_songs": 86,
-            "top_song_id": 1938,
-            "title": "Red Ice",
-            "logo": "https://i.scdn.co/image/ab67616d0000b273f9de4767f57baf779a29677c",
-            "artist_name": "REVNOIR"
+            "total_songs": 34,
+            "top_song_id": 2022,
+            "title": "Prekrasnoe Dalyoko",
+            "logo": "https://i.scdn.co/image/ab67616d0000b273bb984aaf874f8419b764dc09",
+            "artist_name": "PARTICLES"
         }
     ],
     "songs_per_hours": [
         {
-            "hour": 0,
-            "plays": 18
-        },
-        {
             "hour": 1,
-            "plays": 18
-        },
-        {
-            "hour": 2,
-            "plays": 15
-        },
-        {
-            "hour": 3,
-            "plays": 33
-        },
-        {
-            "hour": 4,
-            "plays": 1
-        },
-        {
-            "hour": 10,
-            "plays": 3
-        },
-        {
-            "hour": 11,
-            "plays": 6
-        },
-        {
-            "hour": 13,
-            "plays": 21
-        },
-        {
-            "hour": 14,
-            "plays": 25
-        },
-        {
-            "hour": 15,
-            "plays": 27
-        },
-        {
-            "hour": 16,
             "plays": 16
         },
         {
+            "hour": 2,
+            "plays": 4
+        },
+        {
+            "hour": 3,
+            "plays": 6
+        },
+        {
+            "hour": 11,
+            "plays": 5
+        },
+        {
+            "hour": 12,
+            "plays": 10
+        },
+        {
+            "hour": 13,
+            "plays": 4
+        },
+        {
+            "hour": 14,
+            "plays": 10
+        },
+        {
+            "hour": 15,
+            "plays": 5
+        },
+        {
+            "hour": 16,
+            "plays": 14
+        },
+        {
             "hour": 17,
-            "plays": 15
+            "plays": 19
         },
         {
             "hour": 18,
-            "plays": 26
+            "plays": 19
         },
         {
             "hour": 19,
-            "plays": 14
+            "plays": 9
         },
         {
             "hour": 20,
-            "plays": 14
+            "plays": 11
         },
         {
             "hour": 21,
-            "plays": 24
+            "plays": 13
         },
         {
             "hour": 22,
-            "plays": 40
+            "plays": 12
         },
         {
             "hour": 23,
-            "plays": 44
+            "plays": 14
         }
     ],
     "songs_per_countries": [
         {
             "country": "US",
-            "count": 107
+            "count": 55
         },
         {
             "country": "RU",
-            "count": 69
+            "count": 38
         },
         {
             "country": "GB",
-            "count": 56
+            "count": 24
         },
         {
             "country": "FR",
-            "count": 48
+            "count": 6
         },
         {
-            "country": "IT",
-            "count": 15
+            "country": "SE",
+            "count": 4
         }
     ]
 }
